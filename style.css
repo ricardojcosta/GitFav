@@ -39,14 +39,16 @@ body * {
 
 #app {
   max-width: 1120px;
-  margin: 0 auto;
-  margin: 11.5rem 16rem;
+  margin: 11.5rem auto;
+  padding: 2rem;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin: 0 0 8.7rem 0;
 }
 
 .search {
@@ -65,7 +67,7 @@ header {
   color: var(--text-color-input);
 }
 
-.search button{
+.search button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,3 +90,43 @@ header {
   color: #065e7c;
 }
 
+.search button:hover svg path {
+  fill: #065e7c;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid #4a808c;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+table * {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+table th {
+  background-color: #092d38;
+  text-align: left;
+  font-weight: 700;
+  height: 6.4rem;
+  padding: 2rem;
+}
+
+table th:first-child {
+  border-top-left-radius: 1.2rem;
+  
+}
+
+table th:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+td.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
