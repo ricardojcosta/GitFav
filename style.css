@@ -97,9 +97,30 @@ header {
 table {
   width: 100%;
   border-spacing: 0;
+  border: none;
+  /* overflow: hidden; */
+}
+.table-wrapper {
+  overflow-y: overlay;
   border: 1px solid #4a808c;
   border-radius: 1.2rem;
-  overflow: hidden;
+  max-height: 60.6rem;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  width: 2.1rem;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  margin: 2rem 0;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4a808c;
+  border-radius: 1rem;
+  border: solid 7px transparent;
+  background-clip: padding-box;
+  height: 12.2rem;
 }
 
 table * {
@@ -107,21 +128,45 @@ table * {
   color: var(--text-color);
 }
 
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 table th {
   background-color: #092d38;
   text-align: left;
   font-weight: 700;
   height: 6.4rem;
-  padding: 2rem;
+  padding: 2.4rem 0 2.4rem 4rem;
 }
 
 table th:first-child {
   border-top-left-radius: 1.2rem;
-  
 }
 
 table th:last-child {
   border-top-right-radius: 1.2rem;
+}
+
+table td {
+  padding: 2.4rem 0 2.4rem 4rem;
+  text-align: left;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
 }
 
 td.user img {
@@ -129,4 +174,48 @@ td.user img {
   height: 5.6rem;
   object-fit: cover;
   border-radius: 50%;
+}
+
+td.remove {
+  color: #f75a68;
+  font-weight: 700;
+  line-height: 160%;
+  cursor: pointer;
+}
+
+table tr:nth-child(even) {
+  border: 1px solid #4a808c;
+  background: #4a808c;
+  background-color: #06181c;
+}
+
+.hide {
+  display: none;
+}
+
+.no-favorites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  height: 40rem;
+  background-color: #06181c;
+  /* border-left: 1px solid #4a808c;
+  border-right: 1px solid #4a808c;
+  border-bottom: 1px solid #4a808c; */
+  border-radius: 0 0 12px 12px;
+}
+
+.no-favorites p {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 2.5rem;
+  color: #4e5455;
+}
+
+.no-favorites img{
+  height: 10.5rem;
+  width: 11.2rem;
 }
